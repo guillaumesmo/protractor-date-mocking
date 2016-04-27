@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>{{ fakeDate }}</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.run(function($rootScope, $filter){
+        $rootScope.fakeDate = $filter('date')(new Date(), 'yyyy-MM-dd');
+    });
+</script>
+</body>
+</html>
